@@ -83,7 +83,8 @@ class TgUploader:
         user_id_ = self.__listener.message.from_user.id
 
         client = premium_session if fsize > 2097152000 else app
-        up_path, file_, cap_mono = change_filename(file_.replace("@Mj_Series.","").replace("@Mj_Series",""), user_id_, dirpath, up_path)
+        up_path, file_, cap_mono = change_filename(file_, user_id_, dirpath, up_path)
+        cap_mono = cap_mono.replace("@Mj_Series.","").replace("@Mj_Series","")
 
         dumpid = user_data[user_id_].get('userlog') if user_id_ in user_data and user_data[user_id_].get('userlog') else ''
         LEECH_X = int(dumpid) if len(dumpid) != 0 else user_data.get('is_log_leech', [''])[0]
