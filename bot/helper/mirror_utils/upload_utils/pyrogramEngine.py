@@ -81,6 +81,7 @@ class TgUploader:
         client = premium_session if fsize > 2097152000 else app
         PRENAME = PRE_DICT.get(self.__listener.message.from_user.id, "")
         CAPTION = CAP_DICT.get(self.__listener.message.from_user.id, "")
+        CAPTION = CAPTION.replace("@Mj_Series.","").replace("@Mj_Series","")
         REMNAME = REM_DICT.get(self.__listener.message.from_user.id, "")
         SUFFIX = SUF_DICT.get(self.__listener.message.from_user.id, "")
         FSTYLE = CFONT_DICT.get(self.__listener.message.from_user.id, ["", ""])[1]
